@@ -1,6 +1,10 @@
 const word = []
-let maxLives = 10
+const maxLives = 10
+let live = maxLives
 const gameMessage = document.querySelector('#message')
+const message = document.createElement('h3')
+message.classList.add('message')
+const playAgain = document.getElementById('btn-rest')
 async function getRandomWord() {
     const resp = await fetch("https://random-word-api.herokuapp.com/word?number=1")
     const array = await resp.json()
@@ -41,16 +45,34 @@ btns.forEach(btn => {
 function checkletters(value) {
     let letter = word[0]
     let indices = [];
-    for (let i = 0; i < letter.length; i++) {
-        if (letter[i] === value) {
-            indices.push(i);
-            blankInd[i] = value
-            pargraph.textContent = blankInd.join('')
 
-        }else {
-            maxLives --;
-            
+
+    for (let i = 0; i < letter.length; i++) {
+        if (live!= 0) {
+            console.log(live)
+            if (letter[i] === value) {
+                indices.push(i);
+                blankInd[i] = value
+                pargraph.textContent = blankInd.join('')
+
+            }
         }
     }
+
+    if (!letter.includes(value)) {
+        message.textContent = `you have ${live} lives`
+        const draw = document.querySelectorAll('.drow span')
+        draw[10 - live].style.display = "inline-block"
+        live--
+        if (live < 1) {
+            message.textContent = `GAME OVER! the word was ${letter} !!!`
+        }
+        gameMessage.appendChild(message)
+    }
+
+
 }
+playAgain.addEventListener('click',()=>{
+    location.reload()
+})
 getRandomWord()

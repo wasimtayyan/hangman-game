@@ -5,7 +5,7 @@
 }
 body{
     background-color: #C1D72D;
-    color: black;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 .container{
@@ -21,13 +21,17 @@ body{
     padding: 1em 0;
 }
 .text p{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 .btns{
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
 border: 2px dashed white;
+}
+.btn:hover{
+  background-color: #C1D72D;
+    color: white;  
 }
 .btn{
     background-color: white;
@@ -48,8 +52,9 @@ border: 2px dashed white;
 }
 .drow{
     width:20em;
-    height: 10em;
+    height: 13em;
     border: 3px dashed white; 
+    position: relative;
 }
 #btn-rest{
     margin: 1.5em 0 ;
@@ -65,3 +70,92 @@ border: 2px dashed white;
     background-color: #C1D72D;
     color: white;
 }
+#message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.message{
+    color: white;
+    padding: 1em;
+    font-size: 2rem;
+}
+.drow span{
+    position: absolute;
+    display: none;
+}
+.drow span:nth-child(1){
+    bottom: 1rem;
+    left: 1rem;
+    width: 11rem;
+    border-top: #fff solid 2px;
+}
+ .drow span:nth-child(2) {
+    bottom: 1rem;
+    left: 1.5rem;
+    height: 11rem;
+    border-left: #fff solid 2px;
+}
+
+ .drow span:nth-child(3) {
+    top: 1rem;
+    left: 1rem;
+    width: 6rem;
+    border-top: #fff solid 2px;
+}
+
+ .drow span:nth-child(4) {
+    top: 1rem;
+    left: 6rem;
+    height: .75rem;
+    border-left: #fff solid 2px;
+}
+
+ .drow span:nth-child(5) {
+    top: 1.6rem;
+    left: 5.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: #fff solid 2px;
+    border-radius: 100%;
+}
+
+ .drow span:nth-child(6) {
+    top: 3.1rem;
+    left: 6rem;
+    height: 3rem;
+    border-left: #fff solid 2px;
+}
+
+ .drow span:nth-child(7) {
+    top: 4rem;
+    left: 6rem;
+    width: 2rem;
+    border-top: #fff solid 2px;
+    transform: rotate(24deg);
+}
+
+ .drow span:nth-child(8) {
+    top: 4rem;
+    left: 4.1rem;
+    width: 2rem;
+    border-top: #fff solid 2px;
+    transform: rotate(-24deg);
+}
+
+ .drow span:nth-child(9) {
+    bottom: 6.1rem;
+    left: 6rem;
+    width: 2rem;
+    border-top: #fff solid 2px;
+    transform: rotate(24deg);
+}
+
+ .drow span:nth-child(10) {
+    bottom: 6.1rem;
+    left: 4.1rem;
+    width: 2rem;
+    border-top: #fff solid 2px;
+    transform: rotate(-24deg);
+}
+
