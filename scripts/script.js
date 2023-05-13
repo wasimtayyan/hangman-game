@@ -9,10 +9,8 @@ async function getRandomWord() {
     const resp = await fetch("https://random-word-api.herokuapp.com/word?number=1")
     const array = await resp.json()
     word.push(array[0])
-    console.log(word)
     wordLength(word)
     replacLitters(word)
-    // checkletters(word)
 }
 function wordLength(word) {
     let length = word.length
@@ -32,7 +30,6 @@ function replacLitters(word) {
     pargraph.textContent += blankInd.join('')
     blank.appendChild(pargraph)
 }
-console.log(blankInd)
 const btns = document.querySelectorAll(".btn")
 btns.forEach(btn => {
     btn.addEventListener("click", (e) => {
