@@ -10,15 +10,8 @@ async function getRandomWord() {
     const array = await resp.json()
     word.push(array[0])
     console.log(word)
-    wordLength(word)
     replacLitters(word)
-    // checkletters(word)
 }
-function wordLength(word) {
-    let length = word.length
-    console.log(length)
-}
-
 const blank = document.querySelector("#blanks")
 const pargraph = document.createElement("p")
 const blankInd = []
@@ -48,14 +41,21 @@ function checkletters(value) {
 
 
     for (let i = 0; i < letter.length; i++) {
-        if (live!= 0) {
-            console.log(live)
+        if (live != 0) {
+            // console.log(letter)
             if (letter[i] === value) {
                 indices.push(i);
                 blankInd[i] = value
                 pargraph.textContent = blankInd.join('')
 
             }
+            const gussed = blankInd.join('')
+            if (gussed === letter) {
+                pargraph.style.display = 'none'
+                message.textContent = 'you won!!!'
+                // gameMessage.appendChild(wonMessage)
+            }
+
         }
     }
 
@@ -66,13 +66,14 @@ function checkletters(value) {
         live--
         if (live < 1) {
             message.textContent = `GAME OVER! the word was ${letter} !!!`
+            pargraph.style.display = 'none'
         }
         gameMessage.appendChild(message)
     }
 
 
 }
-playAgain.addEventListener('click',()=>{
+playAgain.addEventListener('click', () => {
     location.reload()
 })
 getRandomWord()

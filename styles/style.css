@@ -66,6 +66,12 @@ border: 2px dashed white;
     border:1px solid white;
     border-radius: 10px;
 }
+.sectoin-three{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .clicked{
     background-color: #C1D72D;
     color: white;
